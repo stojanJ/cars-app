@@ -1,21 +1,21 @@
-import React from "react";
+import React, { useState, useEffect} from "react";
 import CarsService from "../services/CarsService";
 
 export default function AppCars(){
-//     const [cars, setCars] = useState();
+    const [cars, setCars] = useState();
 
-//     const handleGetCars= async () => {
-//     const cars = await CarsService.getAll();
-//     setCars(cars);
-//   };
+    const handleGetCars= async () => {
+    const cars = await CarsService.getAll();
+    setCars(cars);
+  };
 
-//   useEffect(() => {
-//     handleGetCars();
-//   }, []);
+  useEffect(() => {
+    handleGetCars();
+  }, []);
 
     return(
         <div>
-             {/* <div>
+             <div>
               <ul>
                  {cars && cars.map((car) => <li key={car.id}>
                   Brand:{car.brand},
@@ -26,7 +26,7 @@ export default function AppCars(){
                   engine: {car.engine},
                   number of doors: {car.numberOfDoors} </li>)}
              </ul>
-           </div> */}
+           </div>
         </div>
     )
 }
